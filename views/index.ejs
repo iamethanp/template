@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+
+    <% if (loginMessage.length > 0) { %>
+      <div class="alert alert-danger">ERROR: <%= loginMessage %></div>
+    <% } %>
+    <% if (registerMessage.length > 0) { %>
+      <div class="alert alert-danger">ERROR: <%= registerMessage %></div>
+    <% } %>
+
+    <form action="/login" method="post">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" name="login">Login</button>
+    </form>
+
+    <form action="/register" method="post">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <button type="submit" name="register">Register</button>
+    </form>
+
+  </body>
+</html>
